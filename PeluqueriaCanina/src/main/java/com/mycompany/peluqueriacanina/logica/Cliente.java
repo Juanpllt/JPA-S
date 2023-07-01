@@ -1,7 +1,17 @@
 package com.mycompany.peluqueriacanina.logica;
 
-public class Cliente {
-    
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+
+@Entity
+public class Cliente implements Serializable {
+    @Id
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private int idCliente;
     private String nombre;
     private String celCliente;

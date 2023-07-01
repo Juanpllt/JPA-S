@@ -1,5 +1,8 @@
-package com.mycompany.peluqueriacanina.conexion;
+package com.mycompany.peluqueriacanina.persistencia;
 
-public class ControladoraConexion {
+public class ControladoraPersistencia {
+    ClienteJpaController clienteJpa = new ClienteJpaController();
+    MascotaJpaController mascotaJpa = new MascotaJpaController();
+    
     
 }
