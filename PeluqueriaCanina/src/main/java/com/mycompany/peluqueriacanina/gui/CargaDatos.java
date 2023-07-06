@@ -1,8 +1,9 @@
 package com.mycompany.peluqueriacanina.gui;
 
-public class CargaDatos extends javax.swing.JFrame {
+import com.mycompany.peluqueriacanina.logica.Controladora;
 
-    
+public class CargaDatos extends javax.swing.JFrame {
+    Controladora control = new Controladora();
     public CargaDatos() {
         initComponents();
     }
@@ -224,7 +225,16 @@ public class CargaDatos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        String nombreMascota = txtNombre.getText();
+        String raza = txtRaza.getText();
+        String color = txtColor.getText();
+        String observaciones = txtAObserv.getText();
+        String alergico = (String) cmbAlergico.getSelectedItem();
+        String atenEspe = (String) cmbAtEsp.getSelectedItem();
+        
+        String nombreCliente = txtNomCliente.getText();
+        String celular = txtCelular.getText();
+        control.guardar(nombreMascota,raza,color,observaciones,alergico,atenEspe, nombreCliente, celular);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

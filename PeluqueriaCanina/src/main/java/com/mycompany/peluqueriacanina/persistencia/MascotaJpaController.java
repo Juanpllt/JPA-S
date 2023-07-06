@@ -48,7 +48,8 @@ public class MascotaJpaController implements Serializable {
             em.getTransaction().begin();
             mascota = em.merge(mascota);
             em.getTransaction().commit();
-        } catch (Exception ex) {
+        } 
+        catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 int id = mascota.getNumCliente();

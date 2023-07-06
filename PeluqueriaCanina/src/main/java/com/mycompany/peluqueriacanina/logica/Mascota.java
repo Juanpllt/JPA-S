@@ -91,5 +91,10 @@ public class Mascota implements Serializable {
         this.observaciones = observaciones;
     }
     
-    
+    public Cliente getUnCliente(){
+        return unCliente;
+    }
+    public void setUnCliente(Cliente unCliente){
+        this.unCliente = unCliente;
+    }
 }
