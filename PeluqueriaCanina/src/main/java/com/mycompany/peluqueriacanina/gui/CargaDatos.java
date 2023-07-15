@@ -1,7 +1,8 @@
 package com.mycompany.peluqueriacanina.gui;
 
 import com.mycompany.peluqueriacanina.logica.Controladora;
-
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 public class CargaDatos extends javax.swing.JFrame {
     Controladora control = new Controladora();
     public CargaDatos() {
@@ -235,6 +236,12 @@ public class CargaDatos extends javax.swing.JFrame {
         String nombreCliente = txtNomCliente.getText();
         String celular = txtCelular.getText();
         control.guardar(nombreMascota,raza,color,observaciones,alergico,atenEspe, nombreCliente, celular);
+        
+        JOptionPane opPane = new JOptionPane("Guardado exitoso");
+        opPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        JDialog dialog = opPane.createDialog("Guardado");
+        dialog.setVisible(true);
+        dialog.setAlwaysOnTop(true);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
