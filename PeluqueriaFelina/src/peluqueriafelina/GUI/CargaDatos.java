@@ -1,7 +1,9 @@
 package peluqueriafelina.GUI;
 
-public class CargaDatos extends javax.swing.JFrame {
+import peluqueriafelina.logica.Controladora;
 
+public class CargaDatos extends javax.swing.JFrame {
+    Controladora control = new Controladora();
     public CargaDatos() {
         initComponents();
     }
@@ -118,7 +120,7 @@ public class CargaDatos extends javax.swing.JFrame {
         txtRaza.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setText("Alergic@");
+        jLabel8.setText("Alergico");
 
         cmbAlergico.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cmbAlergico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SI" }));
@@ -228,6 +230,11 @@ public class CargaDatos extends javax.swing.JFrame {
 
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnGuardar.setText("GUARDAR");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -308,6 +315,20 @@ public class CargaDatos extends javax.swing.JFrame {
         txtRaza.setText("");
         txtAObser.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+        String nombreMascota = txtNombreMascota.getText();
+        String raza = txtRaza.getText();
+        String observaciones = txtAObser.getText();
+        String alergico = (String)cmbAlergico.getSelectedItem();
+        String atEspe = (String)cmbAtEspe.getSelectedItem();
+        
+        String nombre = txtNombre.getText();
+        String celular = txtCelular.getText();
+        
+        control.guardar(nombreMascota, raza, observaciones, alergico, atEspe, nombre, celular);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

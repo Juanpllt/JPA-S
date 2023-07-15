@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package peluqueriafelina.persistencia;
 
-/**
- *
- * @author USUARIO
- */
+import peluqueriafelina.logica.Cliente;
+import peluqueriafelina.logica.Mascota;
+
 public class ControladoraPersistencia {
-    
+    ClienteJpaController clienteJpa = new ClienteJpaController();
+    MascotaJpaController mascotaJpa = new MascotaJpaController();
+
+    public void guardar(Mascota mascota, Cliente cliente) {
+        clienteJpa.create(cliente);
+        mascotaJpa.create(mascota);
+    }
 }

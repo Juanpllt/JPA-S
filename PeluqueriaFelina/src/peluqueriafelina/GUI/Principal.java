@@ -137,7 +137,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnCargaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaDatosActionPerformed
         CargaDatos cargaD = new CargaDatos();
         cargaD.setVisible(true);
-        cargaD.setLocation(null);
+        cargaD.setAlwaysOnTop(true);
     }//GEN-LAST:event_btnCargaDatosActionPerformed
 
 
